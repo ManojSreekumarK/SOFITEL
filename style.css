@@ -656,6 +656,9 @@ footer ul li:first-child {
   }
 }
 @media (max-width: 425px) {
+  .navbar-hidden-wrapper {
+    width: 50%;
+  }
   footer {
     padding: 7.375rem 4.25rem 3rem 4.25rem;
   }
