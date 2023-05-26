@@ -45,6 +45,7 @@ p {
 /* header */
 header {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 5rem;
@@ -118,7 +119,7 @@ nav {
 }
 nav > ul {
   display: flex;
-  gap: 80px;
+  gap: 5rem;
   justify-content: center;
 }
 nav ul li:hover {
@@ -153,6 +154,7 @@ nav ul li:hover {
 .filter-wrapper {
   position: absolute;
   bottom: 1.25rem;
+  z-index: 9;
   width: 100% !important;
 }
 .filter-container {
@@ -165,6 +167,7 @@ nav ul li:hover {
 
   width: 80%;
 }
+
 .filter {
   display: flex;
   width: 75%;
@@ -200,12 +203,10 @@ nav ul li:hover {
 .search div {
   display: flex;
   position: relative;
-  top: 50%;
-  left: 75%;
-  transform: translate(-50%, -50%);
+
   gap: 0.5rem;
   align-items: center;
-  margin: auto;
+  justify-content: center;
 }
 .Popular-rooms {
   margin: 7.5rem 5rem 2.5rem;
@@ -234,6 +235,8 @@ nav ul li:hover {
 }
 .room-header {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2.5rem;
@@ -323,9 +326,14 @@ nav ul li:hover {
   margin: 0 5rem;
   display: flex;
 }
-.history img {
+.history-image {
   border-radius: 1rem 0rem 0rem 1rem;
   width: 50%;
+}
+.history-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem 0rem 0rem 1rem;
 }
 .history-content {
   padding: 2.5rem 1.875rem;
@@ -385,6 +393,7 @@ nav ul li:hover {
 footer {
   padding: 9.375rem 6.25rem 5rem 6.25rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 footer > * {
@@ -454,5 +463,179 @@ footer ul li:first-child {
   main {
     width: 1600px !important;
     margin: 0 auto;
+  }
+}
+@media (max-width: 1023px) {
+  .hero-image {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+  }
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    border-top-right-radius: 3.125rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .hero > div {
+    width: 100%;
+  }
+  .hero-content {
+    padding: 10.625rem 7.0625rem;
+  }
+  .hero-content h1,
+  .hero-content p {
+    color: white;
+  }
+  .room-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media (max-width: 960px) {
+  :root {
+    font-size: 15px !important;
+  }
+  .facilities {
+    flex-direction: column;
+  }
+  .facility-content {
+    width: 100%;
+  }
+  .facility-cards {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  .review-content {
+    width: 100%;
+  }
+  .user {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 13px !important;
+  }
+  .right {
+    left: 98%;
+  }
+  .left {
+    left: -3%;
+  }
+  .hero-content {
+    padding: 9.625rem 6.0625rem;
+  }
+  .history {
+    position: relative;
+    background-color: transparent;
+  }
+  .history-content {
+    width: 100%;
+  }
+  .history-content h2,
+  .history-content p {
+    color: white;
+  }
+  .history-image {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    width: 100%;
+  }
+
+  .history-image::before {
+    content: "";
+    position: absolute;
+    border-radius: 1rem 0rem 0rem 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  footer {
+    justify-content: center;
+  }
+  footer > * {
+    width: 100px;
+    margin: 20px;
+  }
+  footer > div {
+    width: 120px;
+  }
+  /* .filter-wrapper {
+    position: relative;
+    top: 100%;
+  }
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
+  .filter {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .search div {
+    padding: 10px;
+  }
+  .filter {
+    padding: 20px;
+  } */
+}
+@media (max-width: 671px) {
+  .hero-content {
+    padding: 5.625rem 3.0625rem 7rem;
+  }
+  .filter-container {
+    width: 95%;
+  }
+  .filter-container h4 {
+    font-size: 0.8rem;
+  }
+  .filter-container span {
+    font-size: 0.6rem;
+  }
+  .filter-container img {
+    width: 0.7rem;
+    height: 0.9rem;
+  }
+}
+@media (max-width: 425px) {
+  .right {
+    left: 95%;
+  }
+  .left {
+    left: -5%;
+  }
+  header {
+    padding: 0.8rem 2rem;
+  }
+  .filter-container {
+    width: 95%;
+  }
+  .filter-container h4 {
+    font-size: 0.6rem;
+    line-height: 0;
+  }
+  .filter-container span {
+    font-size: 0.5rem;
+  }
+  .filter-container img {
+    width: 0.6rem;
+    height: 0.8rem;
+  }
+}
+@media (max-width: 375px) {
+  :root {
+    font-size: 10px !important;
   }
 }
